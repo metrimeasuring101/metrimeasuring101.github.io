@@ -306,3 +306,25 @@ nav a:focus { color: #fff; }
 .contact-form form textarea.contact-error {
 	border: 2px solid #42bfc2;
 }
+
+.facebook {
+  background-color: #1a60a2;
+  color: white;
+  width: 25%;
+  height: 50px;
+  border-width: 5px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  border-color: #1a60a2;
+}
+
+.facebook:hover {
+  color: #1a60a2;
+  background-color: white;
+  border-color: white;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
