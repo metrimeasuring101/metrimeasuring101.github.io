@@ -2,7 +2,7 @@ $(function(){
 	var app_id = '459754380852628';
 	var scopes = 'email, user_friends, user_online_presence';
 
-	var btn_login = '<a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>';
+	var btn_login = '<a href="#" id="login" class="ion-social-facebook"></i></a>';
 
 	var div_session = "<div id='facebook-session'>"
 					+ "<strong></strong>"
