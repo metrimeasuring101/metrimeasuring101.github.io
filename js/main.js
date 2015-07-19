@@ -1,6 +1,6 @@
 $(function(){
 	var app_id = '459754380852628';
-	var scopes = 'email, user_friends, user_online_presence';
+	var scopes = 'email, user_friends';
 
 	var btn_login = '<a href="#" id="login" class="ion-social-facebook"></i></a>';
 
