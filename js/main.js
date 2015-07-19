@@ -12,7 +12,7 @@ $(function(){
 
 
 window.fbAsyncInit = function() {
-	
+
 	FB.init({
 		appId      : app_id,
 		status 		: true,
@@ -32,7 +32,7 @@ window.fbAsyncInit = function() {
     console.log(response);
 
     if (response.status === 'connected') {
-    	getFacebookData(); 
+    	getFacebookData();
     } else {
       	callback(false);
     }
@@ -61,7 +61,7 @@ window.fbAsyncInit = function() {
   				}
   			}, {scope: scopes});
   		}
-  
+
   	})
   }
 
@@ -70,8 +70,8 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
       if(response.status === 'connected') {
         $('#facebook-session').before(btn_login);
-        $('#facebook-session').remove(); 
-      }     
+        $('#facebook-session').remove();
+      }
     })
   }
 
@@ -90,4 +90,10 @@ window.fbAsyncInit = function() {
     else
       return false;
   })
-})
+});
+
+$( document ).ready(function() {
+	Parse.initialize("aNPVqxrdbnLE470Rh1m2JwsfTt56gf1qiROzQpU4", "IfYL10EnKtEiAHYvvIPJ1zdgILWVkxF75n8IYFFx");
+
+
+}
