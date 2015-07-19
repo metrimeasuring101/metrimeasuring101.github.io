@@ -45,7 +45,7 @@ window.fbAsyncInit = function() {
   }
   var getFacebookData = function(){
   		FB.api('/me', function(response){
-  			$('#login').after('div_session');
+  			$('#login').after(div_session);
   			$('#login').remove();
   			$('#facebook-session strong').text("Welcome, " + response.name);
   			$('#facebook-session img').attr('src', 'https://graph.facebook.com/' + response.id + '/picture?type=large');
