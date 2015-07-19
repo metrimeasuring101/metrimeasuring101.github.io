@@ -8,8 +8,8 @@ $(function(){
 
 	var div_session = "<div id='facebook-session'>"
 					+ "<strong></strong><br>"
-					+ "<img style='position: relative; left: 60%'><br>"
-					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a>"
+					+ "<img><br>"
+					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a><br>"
 					+ "<div>";
 
 window.fbAsyncInit = function() {
