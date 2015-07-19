@@ -1,249 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
+    <!-- Javascript -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/backstretch.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/main.js"></script>
 
-      <!-- Javascript -->
-      <script src="js/jquery-1.11.1.min.js"></script>
-      <script src="js/backstretch.min.js"></script>
-      <script src="js/wow.min.js"></script>
-      <script src="js/scripts.js"></script>
-      <script src="js/main.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metri</title>
 
+    <!-- Font CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Metri</title>
+    <!-- Important CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/form-elements.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  </head>
+  <body style="background-image: url(img/background.jpg);">
+	<!-- Top menu -->
+	<nav>
+		<a class="scroll-link" href="#top-content">Home</a>
+    <a class="scroll-link" href="#top-content">Use it</a>
+		<a class="scroll-link" href="#about-us">About Us</a>
+		<a class="scroll-link" href="#contact">Contact</a>
+		<div class="hide-menu">
+			<a href=""><i class="ion-navicon-round"></i></a>
+		</div>
+	</nav>
+	<div class="show-menu">
+		<a href=""><i class="ion-navicon-round"></i></a>
+	</div>
+    <!-- Top content -->
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                	<div class="col-sm-5 phone wow fadeInLeft">
+                    	<img src="img/android.png" style="position: relative; top: -100px;">
+                    </div>
+                    <div class="col-sm-7 text wow fadeInUp">
+                        <br/>
+                        <h1 style="position: relative; left: 17%; font-size: 9vh; font-family:Pacifico ,Times New Roman,Times,serif; letter-spacing: 5px;"> Metri </h1>
+                        <br/>
+                        <h5 style="font-family: Open Sans; font-size: 3vh;"> <strong>Get your measurements through your phone!</strong></h5>
+                        <div class="description">
+                        </div>
+                        <div class="top-download">
+                        	<a class="btn big-link-1" href="#">Download it!</a>
+                        	<a class="btn big-link-2 scroll-link" href="#features">Use it!</a>
+                        </div>
+                        <div class="top-download-small" style="position: relative; left: 19%;">
+                        	<a href="#"><i style="font-size: 50px;" class="ion-social-android"></i></a>
+                        	<a href="#"><i style="font-size: 50px;" class="ion-social-github"></i></a>
+                          <a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>
 
-        <!-- Font CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
-        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-        <!-- Important CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/form-elements.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-
-    </head>
-    <body style="background-image: url(img/background.jpg);">
-      <!-- Facebook SDK -->
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId      : '516027895216770',
-            xfbml      : true,
-            version    : 'v2.4'
-          });
-        };
-
-        (function(d, s, id){
-           var js, fjs = d.getElementsByTagName(s)[0];
-           if (d.getElementById(id)) {return;}
-           js = d.createElement(s); js.id = id;
-           js.src = "https://connect.facebook.net/en_US/sdk.js";
-           fjs.parentNode.insertBefore(js, fjs);
-         }(document, 'script', 'facebook-jssdk'));
-      </script>
-      <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-
- <!-- <script>
-
-//   This is called with the results from from FB.getLoginStatus().
-//   function statusChangeCallback(response) {
-//     console.log('statusChangeCallback');
-//     console.log(response);
-//     // The response object is returned with a status field that lets the
-//     // app know the current login status of the person.
-//     // Full docs on the response object can be found in the documentation
-//     // for FB.getLoginStatus().
-//     if (response.status === 'connected') {
-//       // Logged into your app and Facebook.
-//       testAPI();
-//     } else if (response.status === 'not_authorized') {
-//       // The person is logged into Facebook, but not your app.
-//       document.getElementById('status').innerHTML = 'Please log ' +
-//         'into this app.';
-//     } else {
-//       // The person is not logged into Facebook, so we're not sure if
-//       // they are logged into this app or not.
-//       document.getElementById('status').innerHTML = 'Please log ' +
-//         'into Facebook.';
-//     }
-//   }
-//
-//   // This function is called when someone finishes with the Login
-//   // Button.  See the onlogin handler attached to it in the sample
-//   // code below.
-//   function checkLoginState() {
-//     FB.getLoginStatus(function(response) {
-//       statusChangeCallback(response);
-//     });
-//   }
-//
-//   window.fbAsyncInit = function() {
-//   FB.init({
-//     appId      : '{516027895216770}',
-//     cookie     : true,  // enable cookies to allow the server to access
-//                         // the session
-//     version    : 'v2.2' // use version 2.2
-//   });
-//
-//   // Now that we've initialized the JavaScript SDK, we call
-//   // FB.getLoginStatus().  This function gets the state of the
-//   // person visiting this page and can return one of three states to
-//   // the callback you provide.  They can be:
-//   //
-//   // 1. Logged into your app ('connected')
-//   // 2. Logged into Facebook, but not your app ('not_authorized')
-//   // 3. Not logged into Facebook and can't tell if they are logged into
-//   //    your app or not.
-//   //
-//   // These three cases are handled in the callback function.
-//
-//   FB.getLoginStatus(function(response) {
-//     statusChangeCallback(response);
-//   });
-//
-//   };
-//
-//   // Load the SDK asynchronously
-//   (function(d, s, id) {
-//     var js, fjs = d.getElementsByTagName(s)[0];
-//     if (d.getElementById(id)) return;
-//     js = d.createElement(s); js.id = id;
-//     js.src = "https://connect.facebook.net/en_US/sdk.js";
-//     fjs.parentNode.insertBefore(js, fjs);
-//   }(document, 'script', 'facebook-jssdk'));
-//
-//   // Here we run a very simple test of the Graph API after login is
-//   // successful.  See statusChangeCallback() for when this call is made.
-//   function testAPI() {
-//     console.log('Welcome!  Fetching your information.... ');
-//     FB.api('/me', function(response) {
-//       console.log('Successful login for: ' + response.name);
-//       document.getElementById('status').innerHTML =
-//         'Thanks for logging in, ' + response.name + '!';
-//     });
-//   }
-  // </script>
-
-
-   <!--
-//   Below we include the Login Button social plugin. This button uses
-//   the JavaScript SDK to present a graphical Login button that triggers
-//   the FB.login() function when clicked.
-//   -->
-
-<!--    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-   </fb:login-button>
-
-   <div id="status">
-   </div> -->
-  <!-- End Facebook SDK -->
-  		<!-- Top menu -->
-  		<nav>
-  			<a class="scroll-link" href="#top-content">Home</a>
-        <a class="scroll-link" href="#top-content">Use it</a>
-  			<a class="scroll-link" href="#about-us">About Us</a>
-  			<a class="scroll-link" href="#contact">Contact</a>
-  			<div class="hide-menu">
-  				<a href=""><i class="ion-navicon-round"></i></a>
-  			</div>
-  		</nav>
-  		<div class="show-menu">
-  			<a href=""><i class="ion-navicon-round"></i></a>
-  		</div>
-          <!-- Top content -->
-          <div class="top-content">
-              <div class="inner-bg">
-                  <div class="container">
-                      <div class="row">
-                      	<div class="col-sm-5 phone wow fadeInLeft">
-                          	<img src="img/android.png" style="position: relative; top: -70px;">
-                          </div>
-                          <div class="col-sm-7 text wow fadeInUp">
-                              <br/>
-                              <h1 style="position: relative; left: 17%; font-size: 9vh; font-family:Pacifico ,Times New Roman,Times,serif; letter-spacing: 5px;"> Metri </h1>
-                              <br/>
-                              <h5 style="font-family: Open Sans; font-size: 3vh;"> <strong>Get your measurements through your phone!</strong></h5>
-                              <div class="description">
-                              </div>
-                              <div class="top-download">
-                              	<a class="btn big-link-1" href="#">Download it!</a>
-                              	<a class="btn big-link-2 scroll-link" href="#features">Use it!</a>
-                              </div>
-                              <div class="top-download-small" style="position: relative; left: 19%;">
-                              	<a href="#"><i style="font-size: 50px;" class="ion-social-android"></i></a>
-                              	<a href="#"><i style="font-size: 50px;" class="ion-social-github"></i></a>
-                                <a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>
-
-                                <script>
-                                (function(d, s, id) {
-                                    var js, fjs = d.getElementsByTagName(s)[0];
-                                    if (d.getElementById(id)) return;
-                                    js = d.createElement(s); js.id = id;
-                                    js.src = "//connect.facebook.net/en_US/sdk.js";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                  }(document, 'script', 'facebook-jssdk'));
-                                </script>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                          <script>
+                          (function(d, s, id) {
+                              var js, fjs = d.getElementsByTagName(s)[0];
+                              if (d.getElementById(id)) return;
+                              js = d.createElement(s); js.id = id;
+                              js.src = "https://connect.facebook.net/en_US/sdk.js";
+                              fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+                          </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features -->
+    <div class="features-container section-container section-container-full-bg">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12 features section-description wow fadeIn">
+                  <h2>Check dimensions on your phone.</h2>
               </div>
           </div>
-          <!-- Features -->
-          <div class="features-container section-container section-container-full-bg">
-  	        <div class="container">
-  	            <div class="row">
-  	                <div class="col-sm-12 features section-description wow fadeIn">
-  	                    <h2>Check dimensions on your phone.</h2>
-  	                </div>
-  	            </div>
-  	        </div>
-          </div>
+      </div>
+    </div>
 
-          <!-- Contact us -->
-          <div class="contact-container section-container">
-  	        <div class="container">
-  	            <div class="row">
-  	                <div class="col-sm-12 contact section-description wow fadeIn">
-  	                	<div class="section-description-icon"><i class="ion-ios-pulse-strong"></i></div>
-  	                    <h2>Contact us</h2>
-  	                </div>
-  	            </div>
-                <div class="row">
-	                <div class="col-sm-12 contact-form wow fadeInUp">
-	                    <form role="form" action="assets/contact.php" method="post">
-	                    	<div class="form-group">
-	                    		<label class="sr-only" for="contact-email">Email</label>
-	                        	<input type="text" name="email" placeholder="Email" class="contact-email form-control" id="contact-email">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="contact-subject">Subject</label>
-	                        	<input type="text" name="subject" placeholder="Subject" class="contact-subject form-control" id="contact-subject">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="contact-message">Message</label>
-	                        	<textarea name="message" placeholder="Enter your message" class="contact-message form-control" id="contact-message"></textarea>
-	                        </div>
-	                        <button type="submit" class="btn">Send message</button>
-
-	                    </form>
-	                </div>
-	            </div>
-  	        </div>
+    <!-- Contact us -->
+    <div class="contact-container section-container">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12 contact section-description wow fadeIn">
+              	<div class="section-description-icon"><i class="ion-ios-pulse-strong"></i></div>
+                  <h2>Contact us</h2>
+              </div>
           </div>
+          <div class="row">
+            <div class="col-sm-12 contact-form wow fadeInUp">
+                <form role="form" action="assets/contact.php" method="post">
+                	<div class="form-group">
+                		<label class="sr-only" for="contact-email">Email</label>
+                    	<input type="text" name="email" placeholder="Email" class="contact-email form-control" id="contact-email">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="contact-subject">Subject</label>
+                    	<input type="text" name="subject" placeholder="Subject" class="contact-subject form-control" id="contact-subject">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="contact-message">Message</label>
+                    	<textarea name="message" placeholder="Enter your message" class="contact-message form-control" id="contact-message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send message</button>
+
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
 
     </body>
 
