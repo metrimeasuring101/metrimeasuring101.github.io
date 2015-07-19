@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Metri</title>
+
+        <!-- Font CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Francois+One" />
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+        <!-- Important CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media-queries.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+
+        <!-- Polymer Components-->
+        <link href="components/paper-input/paper-input.html" rel="import">
+
+    </head>
+    <body style="background-image: url(img/background.jpg);">
+  		<!-- Top menu -->
+  		<nav>
+  			<a class="scroll-link" href="#top-content">Home</a>
+        <a class="scroll-link" href="#top-content">Use it</a>
+  			<a class="scroll-link" href="#about-us">About Us</a>
+  			<a class="scroll-link" href="#contact">Contact</a>
+  			<div class="hide-menu">
+  				<a href=""><i class="ion-navicon-round"></i></a>
+  			</div>
+  		</nav>
+  		<div class="show-menu">
+  			<a href=""><i class="ion-navicon-round"></i></a>
+  		</div>
+          <!-- Top content -->
+          <div class="top-content">
+              <div class="inner-bg">
+                  <div class="container">
+                      <div class="row">
+                      	<div class="col-sm-5 phone wow fadeInLeft">
+                          	<img src="img/android.png" style="position: relative; top: -70px;">
+                          </div>
+                          <div class="col-sm-7 text wow fadeInUp">
+                              <br/>
+                              <h1 style="position: relative; left: 17%; font-size: 9vh; font-family:Pacifico ,Times New Roman,Times,serif; letter-spacing: 5px;"> Metri </h1>
+                              <br/>
+                              <h5 style="font-family: Open Sans; font-size: 3vh;"> <strong>Get your measurements through your phone!</strong></h5>
+                              <div class="description">
+                              </div>
+                              <div class="top-download">
+                              	<a class="btn big-link-1" href="#">Download it!</a>
+                              	<a class="btn big-link-2 scroll-link" href="#features">Use it!</a>
+                              </div>
+                              <div class="top-download-small" style="position: relative; left: 19%;">
+                              	<a href="#"><i style="font-size: 50px;" class="ion-social-android"></i></a>
+                              	<a href="#"><i style="font-size: 50px;" class="ion-social-github"></i></a>
+                                <a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Features -->
+          <div class="features-container section-container section-container-full-bg">
+  	        <div class="container">
+  	            <div class="row">
+  	                <div class="col-sm-12 features section-description wow fadeIn">
+  	                    <h2>Check dimensions on your phone.</h2>
+  	                </div>
+  	            </div>
+  	        </div>
+          </div>
+
+          <!-- Contact us -->
+          <div class="contact-container section-container">
+  	        <div class="container">
+  	            <div class="row">
+  	                <div class="col-sm-12 contact section-description wow fadeIn">
+  	                	<div class="section-description-icon"><i class="ion-ios-pulse-strong"></i></div>
+  	                    <h2>Contact us</h2>
+  	                </div>
+  	            </div>
+                <div class="row">
+	                <div class="col-sm-12 contact-form wow fadeInUp">
+	                    <form role="form" action="assets/contact.php" method="post">
+	                    	<div class="form-group">
+	                    		<label class="sr-only" for="contact-email">Email</label>
+	                        	<input type="text" name="email" placeholder="Email" class="contact-email form-control" id="contact-email">
+	                        </div>
+	                        <div class="form-group">
+	                        	<label class="sr-only" for="contact-subject">Subject</label>
+	                        	<input type="text" name="subject" placeholder="Subject" class="contact-subject form-control" id="contact-subject">
+	                        </div>
+	                        <div class="form-group">
+	                        	<label class="sr-only" for="contact-message">Message</label>
+	                        	<textarea name="message" placeholder="Enter your message" class="contact-message form-control" id="contact-message"></textarea>
+	                        </div>
+	                        <button type="submit" class="btn">Send message</button>
+	                    </form>
+	                </div>
+	            </div>
+  	        </div>
+          </div>
+
+      <!-- Javascript -->
+      <script src="js/jquery-1.11.1.min.js"></script>
+      <script src="js/backstretch.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
