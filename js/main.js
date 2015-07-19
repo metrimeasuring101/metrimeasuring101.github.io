@@ -45,11 +45,11 @@ window.fbAsyncInit = function() {
 			//Show the table
 			document.getElementById('login').style.display = 'none';
 			//Hide the Facebook Button
-			document.getElementById('mainTable').style.display = 'block';
+			document.getElementById('mainTableDiv').style.display = 'block';
 		} else {
 			console.log(loggedOn);
 			document.getElementById('login').style.display = 'block';
-			document.getElementById('mainTable').style.display= 'none';
+			document.getElementById('mainTableDiv').style.display= 'none';
 		}
 	}
 
@@ -132,7 +132,7 @@ $(document).ready(function() {
 					 //print latitude
 					 console.log(data.documents[i].lat);
 					 console.log(data.documents[i].lon);
-					 createNewTR1(data.documents[i].lat, data.documents[i].lon);					
+					 createNewTR1(data.documents[i].lat, data.documents[i].lon);
 				 }
 
 		},
