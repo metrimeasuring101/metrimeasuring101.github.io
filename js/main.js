@@ -46,6 +46,10 @@ window.fbAsyncInit = function() {
 			document.getElementById('login').style.display = 'none';
 			//Hide the Facebook Button
 			document.getElementById('mainTable').style.display = 'block';
+		} else {
+			console.log(loggedOn);
+			document.getElementById('login').style.display = 'block';
+			document.getElementById('mainTable').style.display= 'none';
 		}
 	}
 
@@ -82,6 +86,8 @@ window.fbAsyncInit = function() {
 
     FB.getLoginStatus(function(response) {
       if(response.status === 'connected') {
+				logged_in=false;
+				startAnimation(logged_in);
         $('#facebook-session').before(btn_login);
         $('#facebook-session').remove();
       }
