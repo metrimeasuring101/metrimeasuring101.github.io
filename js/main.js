@@ -7,8 +7,8 @@ $(function(){
 	var btn_login = '<a href="#" id="login" class="ion-social-facebook"></i></a>';
 
 	var div_session = "<div id='facebook-session'>"
-					+ "<strong></strong><br>"
-					+ "<img><br>"
+					+ "<strong></strong><br><br>"
+					+ "<img><br><br>"
 					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a><br>"
 					+ "<div>";
 
@@ -103,7 +103,6 @@ window.fbAsyncInit = function() {
   $(document).on('click', '#logout', function(e){
     e.preventDefault();
 
-
     if(confirm("Sure?"))
       facebookLogout();
     else
@@ -128,6 +127,8 @@ $(document).ready(function() {
 				 for (var i = 0; i < data.documents.length; i++) {
 					 //print latitude
 					 console.log(data.documents[i].lat);
+					 var tr = $('<tr></tr>');
+					 $()
 
 
 				 }
