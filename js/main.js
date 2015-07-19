@@ -77,7 +77,7 @@ window.fbAsyncInit = function() {
     })
   }
 
-  #(document).on('click', '#login', function(e){
+  $(document).on('click', '#login', function(e){
     e.preventDefault();
 
     facebookLogin();
