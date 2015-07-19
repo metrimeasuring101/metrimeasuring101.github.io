@@ -1,95 +1,95 @@
-$(function() {
-
+$(function(){
 	var app_id = '459754380852628';
 	var scopes = 'email, user_friends, user_online_presence';
 
-	var btn_login = '<a href="#" id="login" class="btn btn-primary">Primary button</a>';
+	var btn_login = '<a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>';
 
-	var div_session = "<div id='facebook-session'>"+
-					  "<strong></strong>"+
-					  "<img>"+
-					  "<a href='#' id='logout' class='btn btn-danger'>Cerrar sesión</a>"+
-					  "</div>";
-
-	window.fbAsyncInit = function() {
-
-	  	FB.init({
-	    	appId      : app_id,
-	    	status     : true,
-	    	cookie     : true, 
-	    	xfbml      : true, 
-	    	version    : 'v2.2'
-	  	});
+	var div_session = "<div id='facebook-session'>"
+					+ "<strong></strong>"
+					+ "<img>"
+					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a>"
+					+ "<div>";
 
 
-	  	FB.getLoginStatus(function(response) {
-	    	statusChangeCallback(response, function() {});
-	  	});
-  	};
+window.fbAsyncInit = function() {
+	
+	FB.init({
+		appId      : app_id,
+		status 		: true,
+		cookie     : true,
+		xfbml      : true,
+		version    : 'v2.2'
+	});
 
-  	var statusChangeCallback = function(response, callback) {
-  		console.log(response);
-   		
-    	if (response.status === 'connected') {
-      		getFacebookData();
-    	} else {
-     		callback(false);
-    	}
-  	}
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+	});
 
-  	var checkLoginState = function(callback) {
-    	FB.getLoginStatus(function(response) {
-      		callback(response);
-    	});
-  	}
+};
 
-  	var getFacebookData =  function() {
-  		FB.api('/me', function(response) {
-	  		$('#login').after(div_session);
-	  		$('#login').remove();
-	  		$('#facebook-session strong').text("Welcome: "+response.name);
-	  		$('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
-	  	});
-  	}
+ var statusChangeCallback = function(response, callback) {
+    console.log('statusChangeCallback');
+    console.log(response);
 
-  	var facebookLogin = function() {
-  		checkLoginState(function(data) {
-  			if (data.status !== 'connected') {
-  				FB.login(function(response) {
-  					if (response.status === 'connected')
-  						getFacebookData();
-  				}, {scope: scopes});
-  			}
+    if (response.status === 'connected') {
+    	getFacebookData(); 
+    } else {
+      	callback(false);
+    }
+  }
+
+  var  checkLoginState = function(callback) {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response, function(data){
+        callback(data);
+      });
+    });
+  }
+  var getFacebookData = function(){
+  		FB.api('/me', function(response){
+  			$('#login').after('div_session');
+  			$('#login').remove();
+  			$('#facebook-session strong').text("Welcome, " + response.name);
+  			$('#facebook-session img').attr('src', 'https://graph.facebook.com/' + response.id + '/picture?type=large');
   		})
-  	}
+  }
 
-  	var facebookLogout = function() {
-  		checkLoginState(function(data) {
-  			if (data.status === 'connected') {
-				FB.logout(function(response) {
-					$('#facebook-session').before(btn_login);
-					$('#facebook-session').remove();
-				})
-			}
-  		})
-
-  	}
-
-
-
-  	$(document).on('click', '#login', function(e) {
-  		e.preventDefault();
-
-  		facebookLogin();
+  var facebookLogin = function(){
+  	checkLoginState(function(response){
+  		if(!response){
+  			FB.login(function(response){
+  				if(response.status === 'connected'){
+  					getFacebookData();
+  				}
+  			}, {scope: scopes});
+  		}
+  
   	})
+  }
 
-  	$(document).on('click', '#logout', function(e) {
-  		e.preventDefault();
+  var facebookLogout = function(){
 
-  		if (confirm("Are you sure?"))
-  			facebookLogout();
-  		else 
-  			return false;
-  	})
+    FB.getLoginStatus(function(response) {
+      if(response.status === 'connected') {
+        $('#facebook-session').before(btn_login);
+        $('#facebook-session').remove(); 
+      }     
+    })
+  }
 
+  #(document).on('click', '#login', function(e){
+    e.preventDefault();
+
+    facebookLogin();
+  })
+
+  #(document).on('click', '#logout', function(e){
+    e.preventDefault();
+
+
+    if(confirm("Sure?"))
+      facebookLogout();
+    else
+      return false;
+  })
 })
