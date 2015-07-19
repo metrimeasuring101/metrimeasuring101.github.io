@@ -92,8 +92,14 @@ window.fbAsyncInit = function() {
   })
 });
 
-$( document ).ready(function() {
+$(document).ready(function() {
 	Parse.initialize("aNPVqxrdbnLE470Rh1m2JwsfTt56gf1qiROzQpU4", "IfYL10EnKtEiAHYvvIPJ1zdgILWVkxF75n8IYFFx");
 
+	var retrieveData = function() {
+		var query = new Parse.query("length");
+		console.log(query);
+
+		retrieveData();
+	}
 
 }
