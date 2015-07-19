@@ -54,7 +54,7 @@ window.fbAsyncInit = function() {
 
   var facebookLogin = function(){
   	checkLoginState(function(response){
-  		if(!response){
+  		if(response.status !== 'connected'){
   			FB.login(function(response){
   				if(response.status === 'connected'){
   					getFacebookData();
