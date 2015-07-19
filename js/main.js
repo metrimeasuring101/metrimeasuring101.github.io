@@ -39,7 +39,17 @@ window.fbAsyncInit = function() {
     }
   }
 
-  var  checkLoginState = function(callback) {
+	var startAnimation = function (loggedOn) {
+		if(loggedOn) {
+			console.log(loggedOn);
+			//Show the table
+			document.getElementById('login').style.display = 'none';
+			//Hide the Facebook Button
+			document.getElementById('mainTable').style.display = 'block';
+		}
+	}
+
+  var checkLoginState = function(callback) {
     FB.getLoginStatus(function(response) {
         callback(response);
     });
@@ -59,6 +69,7 @@ window.fbAsyncInit = function() {
   			FB.login(function(response){
   				if(response.status === 'connected'){
   					logged_in = true;
+						startAnimation(logged_in);
 						getFacebookData();
   				}
   			}, {scope: scopes});
