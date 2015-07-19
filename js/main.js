@@ -1,5 +1,5 @@
 $(function(){
-	var app_id = '516027895216770';
+	var app_id = '459754380852628';
 	var scopes = 'email, user_friends, user_online_presence';
 
 	var btn_login = '<a href="#"><i style="font-size: 50px;" class="ion-social-facebook"></i></a>';
@@ -40,7 +40,9 @@ window.fbAsyncInit = function() {
 
   var  checkLoginState = function(callback) {
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      statusChangeCallback(response, function(data){
+        callback(data);
+      });
     });
   }
   var getFacebookData = function(){
@@ -65,21 +67,29 @@ window.fbAsyncInit = function() {
   	})
   }
 
-  #(document).on('click', '#login', function(e){
-  	e.prevenDefault();
+  var facebookLogout = function(){
 
-  	facebookLogin();
+    FB.getLoginStatus(function(response) {
+      if(response.status === 'connected') {
+        $('#facebook-session').before(btn_login);
+        $('#facebook-session').remove(); 
+      }     
+    })
+  }
+
+  #(document).on('click', '#login', function(e){
+    e.preventDefault();
+
+    facebookLogin();
   })
 
+  #(document).on('click', '#logout', function(e){
+    e.preventDefault();
+
+
+    if(confirm("Sure?"))
+      facebookLogout();
+    else
+      return false;
+  })
 })
-
-
-
-
-// (function(d, s, id) {
-//     var js, fjs = d.getElementsByTagName(s)[0];
-//     if (d.getElementById(id)) return;
-//     js = d.createElement(s); js.id = id;
-//     js.src = "//connect.facebook.net/en_US/sdk.js";
-//     fjs.parentNode.insertBefore(js, fjs);
-//   }(document, 'script', 'facebook-jssdk'));
