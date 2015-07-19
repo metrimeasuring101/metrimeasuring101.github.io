@@ -1,3 +1,5 @@
+var logged_in = false;
+
 $(function(){
 	var app_id = '459754380852628';
 	var scopes = 'email, user_friends';
@@ -9,7 +11,6 @@ $(function(){
 					+ "<img><br>"
 					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a>"
 					+ "<div>";
-
 
 window.fbAsyncInit = function() {
 
@@ -57,7 +58,8 @@ window.fbAsyncInit = function() {
   		if(response.status !== 'connected'){
   			FB.login(function(response){
   				if(response.status === 'connected'){
-  					getFacebookData();
+  					logged_in = true;
+						getFacebookData();
   				}
   			}, {scope: scopes});
   		}
@@ -93,13 +95,33 @@ window.fbAsyncInit = function() {
 });
 
 $(document).ready(function() {
-	Parse.initialize("aNPVqxrdbnLE470Rh1m2JwsfTt56gf1qiROzQpU4", "IfYL10EnKtEiAHYvvIPJ1zdgILWVkxF75n8IYFFx");
 
-	var retrieveData = function() {
-		var query = new Parse.query("length");
-		console.log(query);
+	console.log("check if user is logged in: " + logged_in);
 
-		retrieveData();
-	}
+	$.ajax({
+		url				: "https://api-us.clusterpoint.com/100911/poi/_search.json",
+		type			: "POST",
+		dataType	: "json",
+		data			: '{"query": "*", "docs" : "100"}',
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader('Authorization', 'Basic ' + btoa('app:asdf1234'));
+		},
+		success		: function (data) {
 
-}
+				 for (var i = 0; i < data.documents.length; i++) {
+					 //print latitude
+					 console.log(data.documents[i].lat);
+
+
+				 }
+
+		},
+		fail		: function (data) {
+				alert (data.error);
+
+					fail(data);
+
+		}
+
+	});
+});
