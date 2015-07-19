@@ -328,3 +328,8 @@ nav a:focus { color: #fff; }
   -ms-transition: all 1s;
   transition: all 1s;
 }
+
+#argh {
+	display: block;
+	text-align: center;
+}

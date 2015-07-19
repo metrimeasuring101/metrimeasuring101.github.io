@@ -5,8 +5,8 @@ $(function(){
 	var btn_login = '<a href="#" id="login" class="ion-social-facebook"></i></a>';
 
 	var div_session = "<div id='facebook-session'>"
-					+ "<strong></strong>"
-					+ "<img>"
+					+ "<strong class='argh'></strong>"
+					+ "<img class='argh'>"
 					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a>"
 					+ "<div>";
 
