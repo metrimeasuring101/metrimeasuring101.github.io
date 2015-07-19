@@ -9,8 +9,8 @@ $(function(){
 	var div_session = "<div id='facebook-session'>"
 					+ "<strong></strong><br><br>"
 					+ "<img><br><br>"
-					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a><br>"
-					+ "<div>";
+					+ "<a href='#' id='logout' class='btn btn-danger'> Log out</a>"
+					+ "<div><br>";
 
 window.fbAsyncInit = function() {
 
@@ -110,6 +110,10 @@ window.fbAsyncInit = function() {
   })
 });
 
+var createNewTR1 = function(first, second) {
+	$('#mainTable tr:last').after('<tr><td>'+first+'</td><td>'+second+'</td></tr>');
+}
+
 $(document).ready(function() {
 
 	console.log("check if user is logged in: " + logged_in);
@@ -127,10 +131,8 @@ $(document).ready(function() {
 				 for (var i = 0; i < data.documents.length; i++) {
 					 //print latitude
 					 console.log(data.documents[i].lat);
-					 var tr = $('<tr></tr>');
-					 $()
-
-
+					 console.log(data.documents[i].lon);
+					 createNewTR1(data.documents[i].lat, data.documents[i].lon);					
 				 }
 
 		},
